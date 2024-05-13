@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 
 import App from "./component/App.js";
 import "./index.css";
-import { QuizContextProvider } from "./contexts/QuizContext";
+import { QuizContextProvider } from "./contexts/QuizContext.js";
 
 // REACT 18
 const root = ReactDOM.createRoot(document.getElementById("root"));
