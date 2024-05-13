@@ -1,6 +1,6 @@
 ## React Quiz
 
-React Quiz is a react project website which the user can start by clicking Let's start button. When the user start the quiz the timer will execute. Question's order and point will be shown up in the process bar. After the user answer, the correct answer will be paint to green and user's answer will be moved in + direction of x axis and buttons will be disabled. When the last question gets answered and clicked the finish button, the result of the quiz will be displayed. If the user want to take the test again then they can restart the quiz by clicking the button ▶. You can try by clicking <strong>[ React Quiz ](https://react-quiz-gldn.netlify.app/)</strong>.
+React Quiz is a react project website which the user can start by clicking Let's start button. When the user start the quiz the timer will execute. Question's order and point will be shown up in the progress bar. After the user answered, the correct answer would be painted to green and user's answer will be moved in + direction of x axis and buttons will be disabled. When the last question gets answered and clicked the finish button, the result of the quiz will be displayed. If the user want to take the test again then they can restart the quiz by clicking the button ▶. You can try by clicking <strong>[ React Quiz ](https://react-quiz-gldn.netlify.app/)</strong>.
 
 ## Technologies Used
 
