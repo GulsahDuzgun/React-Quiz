@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuizContext } from "../contexts/QuizContext.js";
+import { useQuizContext } from "../QuizContext";
 
 export default function Progress() {
   const { answer, index, numQuestions, points, totalMaxPoint } =
