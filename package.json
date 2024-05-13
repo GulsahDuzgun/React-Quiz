@@ -1,5 +1,6 @@
 {
   "name": "React-Quiz",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,8 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "data": "json-server -w data/questions.json --port 1227",
-    "react-build": "react-scripts build",
-    "build": "data && react-build"
+    "build": "  react-build"
   },
   "eslintConfig": {
     "extends": [

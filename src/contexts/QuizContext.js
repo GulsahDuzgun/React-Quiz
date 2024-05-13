@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
 
+import { getDate } from "../../netlify/functions/data";
+
 const SECS_PER_QUESTION = 30;
 const QuizContext = createContext();
 
@@ -84,12 +86,28 @@ function QuizContextProvider({ children }) {
   const numQuestions = questions.length;
   const totalMaxPoint = questions.reduce((acc, el) => acc + el.points, 0);
 
-  useEffect(function () {
-    fetch(`http://localhost:1227/questions`)
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "getData", payload: data }))
-      .catch((e) => dispatch({ type: "dataFailed" }));
-  }, []);
+  useEffect(
+    function () {
+      // fetch(`http://localhost:1227/questions`)
+      //   .then((res) => res.json())
+      //   .then((data) => dispatch({ type: "getData", payload: data }))
+      //   .catch((e) => dispatch({ type: "dataFailed" }));
+
+      async function fetchData() {
+        try {
+          const data = await getDate();
+          const res = await data.json();
+          return res;
+        } catch (e) {
+          dispatch({ type: "dataFailed" });
+        }
+      }
+
+      const data = fetchData();
+      dispatch({ type: "getData", payload: data });
+    },
+    [dispatch]
+  );
 
   return (
     <QuizContext.Provider
