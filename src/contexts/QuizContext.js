@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
 
-import { getDate } from "./netlify/functions/data.js";
+import data from "./data/questions.json";
 
 const SECS_PER_QUESTION = 30;
 const QuizContext = createContext();
@@ -96,12 +96,8 @@ function QuizContextProvider({ children }) {
 
       async function fetchData() {
         try {
-          const data = await getDate();
-
-          const res = await data.json();
           console.log(data);
-          console.log(res);
-          dispatch({ type: "getData", payload: res });
+          dispatch({ type: "getData", payload: data });
         } catch (e) {
           dispatch({ type: "dataFailed" });
         }
