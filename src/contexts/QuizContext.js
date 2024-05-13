@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useContext } from "react";
 import { useReducer } from "react";
 import { createContext } from "react";
@@ -9,8 +8,8 @@ const SECS_PER_QUESTION = 30;
 const QuizContext = createContext();
 
 const initialState = {
-  questions: [],
-  status: "loading", //'loading', 'error', 'ready','finished'
+  questions: data.questions,
+  status: "ready", //'loading', 'error', 'ready','finished'
   currentIndex: 0,
   answer: null,
   points: 0,
@@ -21,7 +20,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "getData":
-      return { ...state, status: "ready", questions: action.payload.questions };
+      return { ...state, status: "ready", questions: data.questions };
     case "dataFailed":
       return { ...state, status: "error" };
     case "startQuiz":
@@ -87,26 +86,12 @@ function QuizContextProvider({ children }) {
   const numQuestions = questions?.length;
   const totalMaxPoint = questions?.reduce((acc, el) => acc + el.points, 0);
 
-  useEffect(
-    function () {
-      // fetch(`http://localhost:1227/questions`)
-      //   .then((res) => res.json())
-      //   .then((data) => dispatch({ type: "getData", payload: data }))
-      //   .catch((e) => dispatch({ type: "dataFailed" }));
-
-      async function fetchData() {
-        try {
-          console.log(data);
-          dispatch({ type: "getData", payload: data });
-        } catch (e) {
-          dispatch({ type: "dataFailed" });
-        }
-      }
-
-      fetchData();
-    },
-    [dispatch]
-  );
+  // useEffect(function () {
+  //   // fetch(`http://localhost:1227/questions`)
+  //   //   .then((res) => res.json())
+  //   //   .then((data) => dispatch({ type: "getData", payload: data }))
+  //   //   .catch((e) => dispatch({ type: "dataFailed" }));
+  // }, []);
 
   return (
     <QuizContext.Provider

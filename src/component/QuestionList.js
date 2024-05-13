@@ -4,6 +4,7 @@ import { useQuizContext } from "../contexts/QuizContext.js";
 
 export default function QuestionList() {
   const { questions, index } = useQuizContext();
+
   return (
     <div>
       <h4>{questions[index].question}</h4>
