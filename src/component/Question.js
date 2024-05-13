@@ -10,7 +10,7 @@ export default function Question() {
           disabled={!!answer}
           className={`btn btn-option ${
             answer !== null
-              ? indx === questions.correctOption
+              ? indx === questions[index].correctOption
                 ? "correct"
                 : "wrong"
               : ""
