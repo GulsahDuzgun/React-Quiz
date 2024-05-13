@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuizContext } from "../QuizContext";
+import { useQuizContext } from "../contexts/QuizContext.js";
 
 export default function FinishScreen() {
   const { points, highscore, totalMaxPoint, dispatch } = useQuizContext();

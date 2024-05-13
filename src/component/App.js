@@ -9,7 +9,7 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Timer from "./Timer.js";
 import Footer from "./Footer.js";
-import { useQuizContext } from "../QuizContext";
+import { useQuizContext } from "../contexts/QuizContext.js";
 
 function App() {
   const { status } = useQuizContext();

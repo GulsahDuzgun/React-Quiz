@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuizContext } from "../QuizContext";
+import { useQuizContext } from "../contexts/QuizContext.js";
 export default function Question() {
   const { questions, dispatch, answer, index } = useQuizContext();
 
