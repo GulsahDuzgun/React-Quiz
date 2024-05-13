@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useQuizContext } from "../contexts/QuizContext";
+import { useQuizContext } from "../contexts/QuizContext.js";
 
 export default function Timer() {
   const { remainTime, dispatch } = useQuizContext();

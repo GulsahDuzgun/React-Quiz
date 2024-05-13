@@ -7,9 +7,9 @@ import QuestionList from "./QuestionList";
 import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
-import Timer from "./Timer";
-import Footer from "./Footer";
-import { useQuizContext } from "../contexts/QuizContext";
+import Timer from "./Timer.js";
+import Footer from "./Footer.js";
+import { useQuizContext } from "../contexts/QuizContext.js";
 
 function App() {
   const { status } = useQuizContext();
