@@ -83,8 +83,9 @@ function QuizContextProvider({ children }) {
     dispatch,
   ] = useReducer(reducer, initialState);
 
-  const numQuestions = questions.length;
-  const totalMaxPoint = questions.reduce((acc, el) => acc + el.points, 0);
+  console.log(questions);
+  const numQuestions = questions?.length;
+  const totalMaxPoint = questions?.reduce((acc, el) => acc + el.points, 0);
 
   useEffect(
     function () {
