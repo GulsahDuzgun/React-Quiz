@@ -97,7 +97,10 @@ function QuizContextProvider({ children }) {
       async function fetchData() {
         try {
           const data = await getDate();
+
           const res = await data.json();
+          console.log(data);
+          console.log(res);
           dispatch({ type: "getData", payload: res });
         } catch (e) {
           dispatch({ type: "dataFailed" });
