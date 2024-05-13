@@ -98,14 +98,13 @@ function QuizContextProvider({ children }) {
         try {
           const data = await getDate();
           const res = await data.json();
-          return res;
+          dispatch({ type: "getData", payload: res });
         } catch (e) {
           dispatch({ type: "dataFailed" });
         }
       }
 
-      const data = fetchData();
-      dispatch({ type: "getData", payload: data });
+      fetchData();
     },
     [dispatch]
   );
